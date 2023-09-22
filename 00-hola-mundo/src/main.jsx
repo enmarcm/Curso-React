@@ -7,6 +7,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.Fragment>
+    <button style={{color: '#fff'}}>ESTE ES UN BOTON NORMAL</button>
     <TwitterCard/>
   </React.Fragment>
 );
