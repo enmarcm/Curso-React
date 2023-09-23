@@ -1,21 +1,25 @@
 import './TwitterCard.css'
-const TwitterCard = () => {
+const TwitterCard = ({formatUser, userName, name, isFollowing}) => {
+  const imageUrl = `https://unavatar.io/${userName}/`
+
+  const userFormatted = formatUser(userName)
+
   return (
     <article className="tw-followCard">
       <header className="tw-follorCard-header">
         <img
-          src="https://unavatar.io/midudev/"
-          alt="Avatar de Midudev"
+          src={imageUrl}
+          alt={`Avatar de ${name}`}
           className="tw-followCard-avatar"
         />
         <div className="tw-followCard-info">
-          <strong>Miguel Angel Duran</strong>
-          <span className="tw-followCard-infoUserName">@midudev</span>
+          <strong>{name}</strong>
+          <span className="tw-followCard-infoUserName">{userFormatted}</span>
         </div>
       </header>
 
       <aside>
-        <button className="tw-followCard-button">Seguir</button>
+        <button className="tw-followCard-button">{isFollowing ? 'Dejar de Seguir' : 'Seguir'}</button>
       </aside>
     </article>
   );
