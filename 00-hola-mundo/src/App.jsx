@@ -2,8 +2,8 @@ import TwitterCard from "./TwitterCard.jsx";
 export const App = () => {
   const setArroba = (userName) => `@${userName}`;
 
-  const enmarcm = { userName: "enmarcm", isFollowing: true };
-  const midudev = { userName: "midudev", isFollowing: false };
+  const enmarcm = { userName: "enmarcm"};
+  const midudev = { userName: "midudev"};
 
   return (
     <div className="app">
