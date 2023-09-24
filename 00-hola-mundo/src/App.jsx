@@ -4,24 +4,12 @@ export const App = () => {
 
   return (
     <div className="app">
-      <TwitterCard
-        formatUser={setArroba}
-        userName="midudev"
-        name="Miguel Angel Pedroz"
-        isFollowing={true}
-      />
-      <TwitterCard
-        formatUser={setArroba}
-        userName="enmarcm"
-        name="Enmanuel Colina"
-        isFollowing={true}
-      />
-      <TwitterCard
-        formatUser={setArroba}
-        userName="neiribetarrieta"
-        name="Neiribet Arrieta"
-        isFollowing={false}
-      />
+      <TwitterCard formatUser={setArroba} userName="midudev" isFollowing={true}>
+        Miguel Angel Duran
+      </TwitterCard>
+      <TwitterCard formatUser={setArroba} userName="enmarcm" isFollowing={true}>
+        Enmanuel Ramon Colina
+      </TwitterCard>
     </div>
   );
 };
