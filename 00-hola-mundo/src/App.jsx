@@ -6,9 +6,17 @@ export const App = () => {
   // const enmarcm = { userName: "enmarcm"};
   // const midudev = { userName: "midudev"};
 
+  const users = [
+    { userName: "enmarcm", name: "Enmanuel Ramon Colina", isFollowing: false },
+    { userName: "midudev", name: "Miguel Angel Duren", isFollowing: false },
+    { userName: "vegetta777", name: "Samuel de Luque", isFollowing: false },
+    { userName: "wismichu", name: "Ismael Prego", isFollowing: true },
+    { userName: "auronplay", name: "Raul Alvarez", isFollowing: true },
+  ];
+
   return (
     <div className="app">
-      <TwitterCard formatUser={setArroba} userName='midudev' >
+      {/* <TwitterCard formatUser={setArroba} userName='midudev' >
         Miguel Angel Duren
       </TwitterCard>
       <TwitterCard formatUser={setArroba} userName='enmarcm'>
@@ -16,7 +24,22 @@ export const App = () => {
       </TwitterCard>
       <TwitterCard formatUser={setArroba} userName='vegetta777'>
         Samuel de Luque
-      </TwitterCard>
+      </TwitterCard> */}
+
+      {/* Aqui lo haremos con un foreach */}
+      {users.map((user) => {
+        const { userName, name, isFollowing } = user;
+        return (
+          <TwitterCard
+            isFollowing={isFollowing}
+            userName={userName}
+            formatUser={setArroba}
+            key={userName}
+          >
+            {name}
+          </TwitterCard>
+        );
+      })}
     </div>
   );
 };
