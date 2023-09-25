@@ -12,6 +12,12 @@ export const App = () => {
     { userName: "vegetta777", name: "Samuel de Luque", isFollowing: false },
     { userName: "wismichu", name: "Ismael Prego", isFollowing: true },
     { userName: "auronplay", name: "Raul Alvarez", isFollowing: true },
+    { userName: "Rubiu5", name: "Ruben Doblas", isFollowing: true },
+    { userName: "TheGrefg", name: "David Cánovas", isFollowing: true},
+    { userName: "pokimanelol", name: "Imane Anys", isFollowing: true},
+    { userName: "jack", name: "Jack Dorsey", isFollowing: true},
+    { userName: "elonmusk", name: "Elon Musk", isFollowing: true},
+    { userName: "BillGates", name: "Bill Gates", isFollowing: true},
   ];
 
   return (
