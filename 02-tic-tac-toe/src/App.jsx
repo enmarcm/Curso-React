@@ -9,8 +9,7 @@ function App() {
   return (
     <>
       <h1>Tic Tac Toe</h1>
-      <h2>Bienvenido {name}</h2>
-      <input type="text" onChange={(e)=>setName(e.target.value)} />
+      <h2>Pruebas de juego</h2>
     </>
 
   )
