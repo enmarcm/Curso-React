@@ -13,3 +13,4 @@ const Winner = ({ winner, reiniciar }) => {
 };
 
 export default Winner;
+ 
