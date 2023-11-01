@@ -5,7 +5,7 @@ import App from "./public/App.jsx"
 const root = createRoot(document.getElementById('app'))
 
 root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <App />
-    </React.StrictMode>
+    // </React.StrictMode>
 )
