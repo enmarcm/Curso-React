@@ -1,0 +1,127 @@
+#root{
+  width: 100%; 
+}
+
+.desktop {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.desktop .overlap-wrapper {
+  background-color: #ffffff;
+  height: 1024px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.desktop .overlap {
+  background-image: url(./vector-1.svg);
+  height: 1024px;
+  position: relative;
+  width: 100%;
+}
+
+.overlap{
+  display: flex;
+  justify-content: center;
+}
+
+.desktop .esto-es-una-landing {
+  color: #ffffff;
+  font-family: "Nunito-Bold", Helvetica;
+  font-size: 48px;
+  font-weight: 700;
+  left: 122px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 320px;
+}
+
+.desktop .group {
+  height: 75px;
+  left: 127px;
+  position: absolute;
+  top: 657px;
+  width: 216px;
+}
+
+.desktop .overlap-group {
+  background-color: #1b31a7;
+  border-radius: 40px;
+  height: 75px;
+  position: relative;
+  width: 214px;
+}
+
+.desktop .text-wrapper-4 {
+  color: #ffffff;
+  font-family: "Nunito-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 21px;
+}
+
+.desktop .overlap-group-wrapper {
+  height: 75px;
+  left: 371px;
+  position: absolute;
+  top: 657px;
+  width: 216px;
+}
+
+.desktop .div-wrapper {
+  border: 1px solid;
+  border-color: #ffffff;
+  border-radius: 40px;
+  height: 75px;
+  position: relative;
+  width: 214px;
+}
+
+.desktop .text-wrapper-5 {
+  color: #ffffff;
+  font-family: "Nunito-SemiBold", Helvetica;
+  font-size: 24px;
+  font-weight: 600;
+  left: 62px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 20px;
+}
+
+.desktop .lorem-ipsum-is {
+  color: #ffffff;
+  font-family: "Nunito-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 122px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 476px;
+  width: 453px;
+}
+
+.desktop .image {
+  height: 621px;
+  left: 725px;
+  position: absolute;
+  top: 201px;
+  width: 593px;
+}
+
+.desktop .frame-1 {
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+}

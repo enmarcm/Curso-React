@@ -1,0 +1,53 @@
+.frame {
+    height: 80px;
+    position: relative;
+    width: 1440px;
+}
+
+.frame .text-wrapper {
+    color: #ffffff;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 40px;
+    font-weight: 700;
+    left: 134px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 11px;
+}
+
+.frame .div {
+    color: #ffffff;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 858px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 25px;
+}
+
+.frame .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 980px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 25px;
+}
+
+.frame .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 1116px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 25px;
+}
