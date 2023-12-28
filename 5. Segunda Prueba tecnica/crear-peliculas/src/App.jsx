@@ -1,17 +1,29 @@
 import "./App.css";
-import moviesResults from "./muckets/moviesResults.json";
-import withoutResults from "./muckets/withoutResults.json";
+import { useRef } from "react";
+import useMovies from "./hooks/useMovies";
 import { Movies } from "./components/movies";
 
 function App() {
-  const movies = moviesResults?.Search;
+  const { movies } = useMovies();
+  const inputRef = useRef()
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    // const input = inputRef.current
+    // const {value} = input
+
+    // console.log(e)
+    const fields = new window.FormData(e.target)
+    const value = fields.get('valor')
+    console.log(value)
+  }
 
   return (
     <>
       <header>
         <h1>Buscador de peliculas</h1>
-        <form className="form">
-          <input type="text" placeholder="Avengers, Star Wars, The Matrix..." />
+        <form className="form" onSubmit={handleSubmit}>
+          <input ref={inputRef} name='valor' type="text" placeholder="Avengers, Star Wars, The Matrix..." />
           <button>Buscar</button>
         </form>
       </header>
