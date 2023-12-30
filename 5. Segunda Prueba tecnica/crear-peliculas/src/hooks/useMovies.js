@@ -1,18 +1,17 @@
-import moviesResults from "../muckets/moviesResults.json";
-import withoutResults from "../muckets/withoutResults.json";
+import { useState } from "react";
+import searchMovies from "../services/searchMovies";
 
-const useMovies = () => {
-  const movies = moviesResults?.Search;
+const useMovies = ({ search }) => {
+  const [movies, setMovies] = useState([]);
+  
+  const getMovies = async () => {
+    if (search) {
+      const newMovies = await searchMovies({search})
+      setMovies(newMovies)
+    }
+  };
 
-  const mappedMovies = movies?.map((movie) => ({
-    id: movie.imdbID,
-    title: movie.Title,
-    year: movie.Year,
-    poster: movie.Poster,
-    type: movie.Type,
-  }));
-
-  return { movies: mappedMovies };
+  return { movies, getMovies };
 };
 
 export default useMovies;

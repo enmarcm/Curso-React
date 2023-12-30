@@ -6,13 +6,14 @@ import { Movies } from "./components/movies";
 
 
 function App() {
-  const { movies } = useMovies();
   const inputRef = useRef()
   const {search, updateSearch, error} = useSearch()
+  const { movies, getMovies } = useMovies({search});
 
   const handleSubmit = e => {
     e.preventDefault()
     console.log({search})
+    getMovies()
   }
 
   const handleChange = e => {
