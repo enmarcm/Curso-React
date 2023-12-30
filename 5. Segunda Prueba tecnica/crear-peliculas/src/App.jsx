@@ -1,31 +1,36 @@
 import "./App.css";
-import { useRef } from "react";
+import { useRef, useState, useEffect} from "react";
 import useMovies from "./hooks/useMovies";
+import useSearch from "./hooks/useSearch";
 import { Movies } from "./components/movies";
+
 
 function App() {
   const { movies } = useMovies();
   const inputRef = useRef()
+  const {search, updateSearch, error} = useSearch()
 
   const handleSubmit = e => {
     e.preventDefault()
-    // const input = inputRef.current
-    // const {value} = input
+    console.log({search})
+  }
 
-    // console.log(e)
-    const fields = new window.FormData(e.target)
-    const value = fields.get('valor')
-    console.log(value)
+  const handleChange = e => {
+    const newValue = e.target.value
+    if(newValue === ' ') return
+    updateSearch(newValue)
   }
 
   return (
     <>
       <header>
         <h1>Buscador de peliculas</h1>
+        {search && <p>{search}</p>}
         <form className="form" onSubmit={handleSubmit}>
-          <input ref={inputRef} name='valor' type="text" placeholder="Avengers, Star Wars, The Matrix..." />
+          <input name='valor' type="text" placeholder="Avengers, Star Wars, The Matrix..." value={search} onChange={handleChange}/>
           <button>Buscar</button>
         </form>
+        {error && <p style={{color: 'red'}}>{error}</p>}
       </header>
 
       <main>
