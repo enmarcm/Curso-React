@@ -27,6 +27,7 @@ function App() {
   const handleChange = (e) => {
     const newValue = e.target.value;
     if (newValue === " ") return;
+    
     updateSearch(newValue);
     debounceChangeMovies({ search: newValue });
   };
