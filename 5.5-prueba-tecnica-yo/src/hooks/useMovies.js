@@ -1,5 +1,11 @@
 import { useState, useRef, useCallback } from "react";
 
+/**
+ * Este es el customHook encargado de la logica de obtencion de peliculas
+ * @param {object} param0
+ * @param {string} param0.search Es un string con la busqueda
+ * @returns {{movies: object[], getMovies: function({search: string}): void, loading: boolean}}
+ */
 export function useMovies({ search }) {
   const [movies, setMovies] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -10,8 +16,8 @@ export function useMovies({ search }) {
     if (!search) return;
     if (previousSearch.current === search) return;
 
-    console.log(`Estoy buscndo ${search}`)
-    
+    console.log(`Estoy buscndo ${search}`);
+
     try {
       setLoading(true);
       previousSearch.current = search;
@@ -31,7 +37,6 @@ export function useMovies({ search }) {
       });
 
       setMovies(mappedMovies);
-      
     } catch (error) {
       console.error(error);
     } finally {
