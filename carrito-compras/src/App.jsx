@@ -1,35 +1,26 @@
+import "tailwindcss/tailwind.css";
 import { useState } from "react";
 import Products from "./components/Products";
-import { products as initialProducts } from "./mocks/products.json";
-import "tailwindcss/tailwind.css";
-import { FILTERS_CATEGORY } from "./constants/filters";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { products as initialProducts } from "./mocks/products.json";
+import useFilter from "./constants/useFilter";
+import {IS_DEVELOPMENT} from "./config.js"
 
 function App() {
   const [products, setProducts] = useState(initialProducts);
 
-  const [filters, setFilters] = useState({
-    category: FILTERS_CATEGORY.all,
-    minPrice: 0,
-  });
-
-  //Filtrado
-  const filterProducts = ({ products }) => {
-    return products.filter((product) => {
-      return (
-        product.price >= filters.minPrice &&
-        (product.category === filters.category ||
-          filters.category === FILTERS_CATEGORY.all)
-      );
-    });
-  };
+  const { filterProducts, setFilters, filters } = useFilter();
 
   const productsFiltered = filterProducts({ products });
 
   return (
     <>
-      <Header updateFilter={setFilters}/>
+      <Header updateFilters={setFilters} />
       <Products products={productsFiltered} />
+      <Footer prop={filters} />
+
+      {/* {IS_DEVELOPMENT && <Footer prop={filters} />} */}
     </>
   );
 }
