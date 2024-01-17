@@ -1,22 +1,22 @@
 import { useState, useId } from "react";
 import { FILTERS_CATEGORY } from "../constants/filters";
+import useFilter from "../hooks/useFilter";
 
-const Filters = ({ updateFilters }) => {
-  const [minPrice, setMinPrice] = useState(0);
+const Filters = () => {
+  const {filters, setFilters} = useFilter()
 
   const minPrinceId = useId();
   const categoryId = useId();
 
   const handleChangePrice = (e) => {
     const newMinPrice = e.target.value;
-    setMinPrice(newMinPrice);
-    updateFilters((prevState) => ({ ...prevState, minPrice: newMinPrice }));
+    setFilters((prevState) => ({ ...prevState, minPrice: newMinPrice }));
   };
 
   const handleChangeCategory = (e) => {
     const newCategory = e.target.value;
     const valueCategory = FILTERS_CATEGORY[newCategory];
-    updateFilters((prevState) => ({ ...prevState, category: valueCategory }));
+    setFilters((prevState) => ({ ...prevState, category: valueCategory }));
   };
 
   return (
@@ -29,10 +29,10 @@ const Filters = ({ updateFilters }) => {
           name="price"
           min={0}
           max={1000}
-          value={minPrice}
+          value={filters?.minPrice}
           onChange={handleChangePrice}
         />
-        <span className="min-w-12">${minPrice}</span>
+        <span className="min-w-12">${filters?.minPrice}</span>
       </div>
 
       <div className="flex gap-4">

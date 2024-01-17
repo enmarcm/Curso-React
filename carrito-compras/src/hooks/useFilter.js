@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { FILTERS_CATEGORY } from "./filters";
+import { useContext } from "react";
+import { FILTERS_CATEGORY } from "../constants/filters";
 import { FiltersContext } from "../context/filters";
 
 /**

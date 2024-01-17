@@ -1,6 +1,10 @@
 import React from "react";
+import useFilter from "../hooks/useFilter";
 
-const Footer = ({ prop = false }) => {
+const Footer = () => {
+
+  const {filters: prop } = useFilter()
+
   return (
     <footer className="fixed right-4 left-4 bottom-2 text-left bg-gray-900 px-2 py-2 rounded-md opacity-65 backdrop-blur-3xl shadow-md">
       {prop && <h3> {JSON.stringify(prop)}</h3>}
@@ -11,4 +15,4 @@ const Footer = ({ prop = false }) => {
   );
 };
 
-export default Footer;
+export default Footer
