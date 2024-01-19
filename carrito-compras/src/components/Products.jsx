@@ -1,11 +1,15 @@
 import React from "react";
-import { AddToCartIcon } from "./Icons.jsx";
+import { AddToCartIcon, RemoveFromCartIcon } from "./Icons.jsx";
+import useCart from "../hooks/useCart.js";
 
 const Products = ({ products }) => {
+  const { addToCart, checkProductInCart, removeFromCart } = useCart();
+
   return (
     <main className="w-full flex justify-center items-center">
       <ul className="grid grid-cols-auto-fit-200 gap-4 w-full">
         {products.map((product) => {
+          const isProductInCart = checkProductInCart(product);
           return (
             <li
               key={product.id}
@@ -22,8 +26,15 @@ const Products = ({ products }) => {
               </div>
 
               <div>
-                <button>
-                  <AddToCartIcon />
+                <button
+                  onClick={() => {
+                    isProductInCart
+                      ? removeFromCart(product)
+                      : addToCart(product);
+                  }}
+                  className={isProductInCart ? "bg-red-400" : "bg-green-400"}
+                >
+                  {isProductInCart ? <RemoveFromCartIcon /> : <AddToCartIcon />}
                 </button>
               </div>
             </li>

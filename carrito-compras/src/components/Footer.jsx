@@ -1,12 +1,19 @@
 import React from "react";
 import useFilter from "../hooks/useFilter";
+import useCart from "../hooks/useCart";
 
 const Footer = () => {
 
-  const {filters: prop } = useFilter()
+  const {filters} = useFilter()
+  const {cart} = useCart()
+
+  const prop = [
+    filters,
+    ...cart,
+  ]
 
   return (
-    <footer className="fixed right-4 left-4 bottom-2 text-left bg-gray-900 px-2 py-2 rounded-md opacity-65 backdrop-blur-3xl shadow-md">
+    <footer className="fixed right-4 left-4 bottom-2 text-left bg-gray-900 px-2 py-2 rounded-md opacity-65 backdrop-blur-3xl shadow-md max-h-40 overflow-y-auto overflow-x-hidden">
       {prop && <h3> {JSON.stringify(prop)}</h3>}
       <h4 className="m-0 flex">Prueba tecnica de React ⚛️</h4>
       <span className="text-sm text-orange-400 opacity-80">@enmarcm</span>
